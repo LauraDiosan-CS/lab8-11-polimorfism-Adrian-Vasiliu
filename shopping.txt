@@ -1,0 +1,2 @@
+Client1 str.Decebal sapun-ceai 15 Lidl
+Client1 str.Traian baterii-suc 20 Kaufland
