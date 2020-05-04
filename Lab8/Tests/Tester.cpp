@@ -82,8 +82,8 @@ void Tester::test_TemplateRepository() {
     Food food1("Client1", "address1", preparation_list, 5);
     food_repo->add(food1);
     int position = food_repo->get_position(food1);
-    assert(position == 1);
-    Food food = food_repo->get_item(1);
+    assert(position == 0);
+    Food food = food_repo->get_item(0);
     assert(food.get_client_name() == "Client1");
     assert(food.get_client_address() == "address1");
     assert(food.get_string_list() == preparation_list);
@@ -94,4 +94,5 @@ void Tester::test_all() {
     test_Food();
     test_Shopping();
     test_User();
+    test_TemplateRepository();
 }

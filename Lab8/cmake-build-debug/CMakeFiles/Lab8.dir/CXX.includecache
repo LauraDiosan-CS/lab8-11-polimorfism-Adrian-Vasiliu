@@ -36,10 +36,6 @@ vector
 algorithm
 -
 
-C:/Users/Admin/CLionProjects/Lab8/Service/Service.cpp
-Service.h
-C:/Users/Admin/CLionProjects/Lab8/Service/Service.h
-
 C:/Users/Admin/CLionProjects/Lab8/Service/Service.h
 ../Repository/TemplateRepository.h
 C:/Users/Admin/CLionProjects/Lab8/Repository/TemplateRepository.h
@@ -74,33 +70,9 @@ cassert
 
 C:/Users/Admin/CLionProjects/Lab8/Tests/Tester.h
 
-C:/Users/Admin/CLionProjects/Lab8/UI/Console.cpp
-Console.h
-C:/Users/Admin/CLionProjects/Lab8/UI/Console.h
-iostream
--
-
 C:/Users/Admin/CLionProjects/Lab8/UI/Console.h
 ../Service/Service.h
 C:/Users/Admin/CLionProjects/Lab8/Service/Service.h
 string
 -
-
-C:/Users/Admin/CLionProjects/Lab8/app.cpp
-Tests/Tester.h
-C:/Users/Admin/CLionProjects/Lab8/Tests/Tester.h
-Domain/Food.h
-C:/Users/Admin/CLionProjects/Lab8/Domain/Food.h
-Domain/Shopping.h
-C:/Users/Admin/CLionProjects/Lab8/Domain/Shopping.h
-Domain/User.h
-C:/Users/Admin/CLionProjects/Lab8/Domain/User.h
-Repository/TemplateRepository.h
-C:/Users/Admin/CLionProjects/Lab8/Repository/TemplateRepository.h
-Repository/TemplateFileRepo.h
-C:/Users/Admin/CLionProjects/Lab8/Repository/TemplateFileRepo.h
-Service/Service.h
-C:/Users/Admin/CLionProjects/Lab8/Service/Service.h
-UI/Console.h
-C:/Users/Admin/CLionProjects/Lab8/UI/Console.h
 
