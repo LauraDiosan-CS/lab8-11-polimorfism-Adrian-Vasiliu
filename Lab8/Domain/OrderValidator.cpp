@@ -9,6 +9,7 @@ OrderValidator::OrderValidator() {
 OrderValidator::~OrderValidator() = default;
 
 int OrderValidator::validate(Order order) {
+    message = "";
     no_errors = 0;
     if (order.get_price() <= 0) {
         no_errors++;

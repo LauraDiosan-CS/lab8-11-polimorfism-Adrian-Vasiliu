@@ -67,6 +67,11 @@ void Console::add_food() {
     cin >> client_address;
     cout << "Numarul de preparate: ";
     cin >> n;
+    while (n == 0) {
+        cout << "Lista trebuie sa contina minim un element!\n"
+             << "Numarul de preparate: ";
+        cin >> n;
+    }
     for (int i = 0; i < n; i++) {
         cout << "Preparat " << i + 1 << ": ";
         cin >> s;
@@ -78,7 +83,7 @@ void Console::add_food() {
         service.add_food(client_name, client_address, preparations_list, price);
         cout << "Comanda adaugata";
     }
-    catch (ValidationException exception) {
+    catch (ValidationException &exception) {
         cout << exception.get_message();
     }
 }
@@ -93,6 +98,11 @@ void Console::add_shopping() {
     cin >> client_address;
     cout << "Numarul de cumparaturi: ";
     cin >> n;
+    while (n == 0) {
+        cout << "Lista trebuie sa contina minim un element!\n"
+             << "Numarul de preparate: ";
+        cin >> n;
+    }
     for (int i = 0; i < n; i++) {
         cout << "Obiect " << i + 1 << ": ";
         cin >> s;
@@ -106,7 +116,7 @@ void Console::add_shopping() {
         service.add_shopping(client_name, client_address, shopping_list, price, shop_name);
         cout << "Comanda adaugata";
     }
-    catch (ValidationException exception) {
+    catch (ValidationException &exception) {
         cout << exception.get_message();
     }
 }
