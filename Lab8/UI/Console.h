@@ -7,17 +7,21 @@ class Console {
  private:
     Service service;
     User user;
-    int login();
+    bool login();
     void logout();
+    void add_user();
+    void add_order();
+    void add_food();
+    void add_shopping();
+//    void remove_order();
+    static void show_foods(vector<Food>);
+    static void show_shopping(vector<Shopping> shopping);
+    static void show_orders(const vector<Food> &, const vector<Shopping> &shopping);
+    void show_orders_by_client();
+    void menu();
  public:
     Console();
     explicit Console(Service &);
     ~Console();
-//    void add_order();
-//    void remove_order();
-//    void update_order();
-    void show_foods();
-    void show_shopping();
-    void show_all();
     void run_console();
 };

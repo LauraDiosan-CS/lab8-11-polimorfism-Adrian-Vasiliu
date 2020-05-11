@@ -22,6 +22,7 @@ Order::Order(const Order &order) {
 
 Order::~Order() {
     client_name = client_address = "";
+    string_list.clear();
     price = -1;
 }
 

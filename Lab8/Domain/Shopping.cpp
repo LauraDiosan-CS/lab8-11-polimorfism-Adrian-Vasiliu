@@ -22,6 +22,14 @@ Shopping::Shopping(const string &line, char delimiter) {
     shop_name = tokens[4];
 }
 
+string Shopping::get_shop_name() {
+    return shop_name;
+}
+
+void Shopping::set_shop_name(const string &new_shop_name) {
+    shop_name = new_shop_name;
+}
+
 Shopping &Shopping::operator=(const Shopping &shopping) {
     if (this == &shopping) return *this;
     client_name = shopping.client_name;
@@ -30,14 +38,6 @@ Shopping &Shopping::operator=(const Shopping &shopping) {
     price = shopping.price;
     shop_name = shopping.shop_name;
     return *this;
-}
-
-string Shopping::get_shop_name() {
-    return shop_name;
-}
-
-void Shopping::set_shop_name(const string &new_shop_name) {
-    shop_name = new_shop_name;
 }
 
 bool Shopping::operator==(const Shopping &shopping) {
@@ -50,15 +50,16 @@ ostream &operator<<(ostream &os, Shopping shopping) {
     for (const auto &article:shopping.get_string_list())
         articles += article + ',';
     os << "Nume client: " << shopping.get_client_name() << "; adresa: " << shopping.get_client_address()
-       << ", cumparaturi: " << articles << " pret:" << shopping.get_price() << ", magazin: "
+       << ", cumparaturi: " << articles << " pret: " << shopping.get_price() << ", magazin: "
        << shopping.get_shop_name();
     return os;
 }
 
 string Shopping::string_delimiter(char delimiter) {
     string articles;
-    for (const auto &article:string_list)
-        articles += article + '-';
+    for (int i = 0; i < string_list.size() - 1; i++)
+        articles += string_list[i] + '-';
+    articles += string_list.back();
     return client_name + delimiter + client_address + delimiter + articles + delimiter + to_string(price) + delimiter +
             shop_name;
 }

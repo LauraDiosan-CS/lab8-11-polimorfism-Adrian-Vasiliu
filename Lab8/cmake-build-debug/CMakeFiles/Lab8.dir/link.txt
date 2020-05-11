@@ -1,3 +1,1 @@
-"C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\Lab8.dir/objects.a
-C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\Lab8.dir/objects.a @CMakeFiles\Lab8.dir\objects1.rsp
-C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE -g   -Wl,--whole-archive CMakeFiles\Lab8.dir/objects.a -Wl,--no-whole-archive  -o Lab8.exe -Wl,--out-implib,libLab8.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Lab8.dir\linklibs.rsp
+/usr/bin/c++  -g   CMakeFiles/Lab8.dir/app.cpp.o CMakeFiles/Lab8.dir/Domain/Order.cpp.o CMakeFiles/Lab8.dir/Domain/Food.cpp.o CMakeFiles/Lab8.dir/Domain/Shopping.cpp.o CMakeFiles/Lab8.dir/Service/Service.cpp.o CMakeFiles/Lab8.dir/Domain/User.cpp.o CMakeFiles/Lab8.dir/UI/Console.cpp.o CMakeFiles/Lab8.dir/Tests/Tester.cpp.o CMakeFiles/Lab8.dir/Domain/OrderValidator.cpp.o  -o Lab8 

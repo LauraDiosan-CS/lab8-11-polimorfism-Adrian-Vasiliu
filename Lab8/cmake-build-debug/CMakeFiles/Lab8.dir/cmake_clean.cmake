@@ -1,16 +1,15 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Lab8.dir/Domain/Food.cpp.obj"
-  "CMakeFiles/Lab8.dir/Domain/Order.cpp.obj"
-  "CMakeFiles/Lab8.dir/Domain/Shopping.cpp.obj"
-  "CMakeFiles/Lab8.dir/Domain/User.cpp.obj"
-  "CMakeFiles/Lab8.dir/Service/Service.cpp.obj"
-  "CMakeFiles/Lab8.dir/Tests/Tester.cpp.obj"
-  "CMakeFiles/Lab8.dir/UI/Console.cpp.obj"
-  "CMakeFiles/Lab8.dir/app.cpp.obj"
-  "Lab8.exe"
-  "Lab8.exe.manifest"
+  "CMakeFiles/Lab8.dir/Domain/Food.cpp.o"
+  "CMakeFiles/Lab8.dir/Domain/Order.cpp.o"
+  "CMakeFiles/Lab8.dir/Domain/OrderValidator.cpp.o"
+  "CMakeFiles/Lab8.dir/Domain/Shopping.cpp.o"
+  "CMakeFiles/Lab8.dir/Domain/User.cpp.o"
+  "CMakeFiles/Lab8.dir/Service/Service.cpp.o"
+  "CMakeFiles/Lab8.dir/Tests/Tester.cpp.o"
+  "CMakeFiles/Lab8.dir/UI/Console.cpp.o"
+  "CMakeFiles/Lab8.dir/app.cpp.o"
+  "Lab8"
   "Lab8.pdb"
-  "libLab8.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.

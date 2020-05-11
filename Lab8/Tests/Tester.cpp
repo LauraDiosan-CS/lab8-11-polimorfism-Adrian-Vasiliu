@@ -4,7 +4,6 @@
 #include "../Domain/Shopping.h"
 #include "../Domain/User.h"
 #include "../Repository/TemplateRepository.h"
-#include "../Repository/TemplateFileRepo.h"
 #include "../Service/Service.h"
 #include "../UI/Console.h"
 #include <cassert>
@@ -88,6 +87,10 @@ void Tester::test_TemplateRepository() {
     assert(food.get_client_address() == "address1");
     assert(food.get_string_list() == preparation_list);
     assert(food.get_price() == 5);
+
+    assert(food_repo->get_size() == 1);
+    food_repo->remove(food1);
+    assert(food_repo->get_size() == 0);
 }
 
 void Tester::test_all() {

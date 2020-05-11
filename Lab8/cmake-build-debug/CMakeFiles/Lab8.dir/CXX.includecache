@@ -6,73 +6,65 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Admin/CLionProjects/Lab8/Domain/Food.h
+/home/adi/CLionProjects/Lab8/Domain/Food.h
 Order.h
-C:/Users/Admin/CLionProjects/Lab8/Domain/Order.h
+/home/adi/CLionProjects/Lab8/Domain/Order.h
 
-C:/Users/Admin/CLionProjects/Lab8/Domain/Order.h
+/home/adi/CLionProjects/Lab8/Domain/Order.h
 iostream
 -
 vector
 -
 
-C:/Users/Admin/CLionProjects/Lab8/Domain/Shopping.h
+/home/adi/CLionProjects/Lab8/Domain/OrderValidator.h
 Order.h
-C:/Users/Admin/CLionProjects/Lab8/Domain/Order.h
+/home/adi/CLionProjects/Lab8/Domain/Order.h
+exception
+-
 
-C:/Users/Admin/CLionProjects/Lab8/Domain/User.h
+/home/adi/CLionProjects/Lab8/Domain/Shopping.h
+Order.h
+/home/adi/CLionProjects/Lab8/Domain/Order.h
+
+/home/adi/CLionProjects/Lab8/Domain/User.h
 iostream
 -
 
-C:/Users/Admin/CLionProjects/Lab8/Repository/TemplateFileRepo.h
-TemplateRepository.h
-C:/Users/Admin/CLionProjects/Lab8/Repository/TemplateRepository.h
-fstream
--
-
-C:/Users/Admin/CLionProjects/Lab8/Repository/TemplateRepository.h
+/home/adi/CLionProjects/Lab8/Repository/TemplateRepository.h
 vector
 -
 algorithm
 -
 
-C:/Users/Admin/CLionProjects/Lab8/Service/Service.h
+/home/adi/CLionProjects/Lab8/Service/Service.h
 ../Repository/TemplateRepository.h
-C:/Users/Admin/CLionProjects/Lab8/Repository/TemplateRepository.h
+/home/adi/CLionProjects/Lab8/Repository/TemplateRepository.h
 ../Domain/Food.h
-C:/Users/Admin/CLionProjects/Lab8/Domain/Food.h
+/home/adi/CLionProjects/Lab8/Domain/Food.h
 ../Domain/Shopping.h
-C:/Users/Admin/CLionProjects/Lab8/Domain/Shopping.h
+/home/adi/CLionProjects/Lab8/Domain/Shopping.h
 ../Domain/User.h
-C:/Users/Admin/CLionProjects/Lab8/Domain/User.h
+/home/adi/CLionProjects/Lab8/Domain/User.h
+../Domain/OrderValidator.h
+/home/adi/CLionProjects/Lab8/Domain/OrderValidator.h
 
-C:/Users/Admin/CLionProjects/Lab8/Tests/Tester.cpp
-Tester.h
-C:/Users/Admin/CLionProjects/Lab8/Tests/Tester.h
-../Domain/Order.h
-C:/Users/Admin/CLionProjects/Lab8/Domain/Order.h
-../Domain/Food.h
-C:/Users/Admin/CLionProjects/Lab8/Domain/Food.h
-../Domain/Shopping.h
-C:/Users/Admin/CLionProjects/Lab8/Domain/Shopping.h
-../Domain/User.h
-C:/Users/Admin/CLionProjects/Lab8/Domain/User.h
-../Repository/TemplateRepository.h
-C:/Users/Admin/CLionProjects/Lab8/Repository/TemplateRepository.h
-../Repository/TemplateFileRepo.h
-C:/Users/Admin/CLionProjects/Lab8/Repository/TemplateFileRepo.h
-../Service/Service.h
-C:/Users/Admin/CLionProjects/Lab8/Service/Service.h
-../UI/Console.h
-C:/Users/Admin/CLionProjects/Lab8/UI/Console.h
-cassert
+/home/adi/CLionProjects/Lab8/UI/Console.cpp
+Console.h
+/home/adi/CLionProjects/Lab8/UI/Console.h
+../ValidationException.h
+/home/adi/CLionProjects/Lab8/ValidationException.h
+iostream
 -
 
-C:/Users/Admin/CLionProjects/Lab8/Tests/Tester.h
-
-C:/Users/Admin/CLionProjects/Lab8/UI/Console.h
+/home/adi/CLionProjects/Lab8/UI/Console.h
 ../Service/Service.h
-C:/Users/Admin/CLionProjects/Lab8/Service/Service.h
+/home/adi/CLionProjects/Lab8/Service/Service.h
 string
+-
+
+/home/adi/CLionProjects/Lab8/ValidationException.h
+exception
+-
+cstring
 -
 

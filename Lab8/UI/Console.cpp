@@ -1,4 +1,5 @@
 #include "Console.h"
+#include "../ValidationException.h"
 #include <iostream>
 using namespace std;
 
@@ -10,32 +11,106 @@ Console::Console(Service &service) {
 
 Console::~Console() = default;
 
-int Console::login() {
-    string u, p;
-    user.set_name(u);
-    user.set_password(p);
-    cout << endl << "Utilizator: ";
-    cin >> u;
-    cout << "Parola:";
-    cin >> p;
-    return service.login(u, p);
+bool Console::login() {
+    string user_name, password;
+    cout << "\nUtilizator: ";
+    cin >> user_name;
+    cout << "Parola: ";
+    cin >> password;
+    user.set_name(user_name);
+    user.set_password(password);
+    return service.login(user);
 }
 
 void Console::logout() {
-    service.logout(user.get_name(), user.get_password());
+    user.set_name(""), user.set_password("");
 }
 
-//void Console::add_order() {
-//    char name_string[50];
-//    int memory_kb, status = 0;
-//    cout << "Name: ";
-//    cin >> name_string;
-//    char *name = name_string;
-//    cout << "Memory (in KB): ";
-//    cin >> memory_kb;
-//    service.add_order(name, memory_kb, status);
-//}
-//
+void Console::add_user() {
+    string user_name, password;
+    cout << "\nNume utilizator: ";
+    cin >> user_name;
+    cout << "Parola: ";
+    cin >> password;
+    service.add_user(user_name, password);
+    cout << "Cont creat\n";
+}
+
+void Console::add_order() {
+    cout << endl
+         << "Tipul comenzii:\n"
+         << "1. Food\n"
+         << "2. Shopping\n"
+         << "Optiunea: ";
+    int option;
+    cin >> option;
+    switch (option) {
+        case 1: {
+            add_food();
+            break;
+        }
+        case 2: {
+            add_shopping();
+            break;
+        }
+        default: cout << "\nOptiune inexistenta! Reincercati!";
+    }
+}
+
+void Console::add_food() {
+    string client_name, client_address, s;
+    vector<string> preparations_list;
+    int n, price;
+    cout << "\nNume client: ";
+    cin >> client_name;
+    cout << "Adresa client(fara spatii): ";
+    cin >> client_address;
+    cout << "Numarul de preparate: ";
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        cout << "Preparat " << i + 1 << ": ";
+        cin >> s;
+        preparations_list.push_back(s);
+    }
+    cout << "Pret total: ";
+    cin >> price;
+    try {
+        service.add_food(client_name, client_address, preparations_list, price);
+        cout << "Comanda adaugata";
+    }
+    catch (ValidationException exception) {
+        cout << exception.get_message();
+    }
+}
+
+void Console::add_shopping() {
+    string client_name, client_address, s, shop_name;
+    vector<string> shopping_list;
+    int n, price;
+    cout << "\nNume client: ";
+    cin >> client_name;
+    cout << "Adresa client(fara spatii): ";
+    cin >> client_address;
+    cout << "Numarul de cumparaturi: ";
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        cout << "Obiect " << i + 1 << ": ";
+        cin >> s;
+        shopping_list.push_back(s);
+    }
+    cout << "Pret total: ";
+    cin >> price;
+    cout << "Nume magazin: ";
+    cin >> shop_name;
+    try {
+        service.add_shopping(client_name, client_address, shopping_list, price, shop_name);
+        cout << "Comanda adaugata";
+    }
+    catch (ValidationException exception) {
+        cout << exception.get_message();
+    }
+}
+
 //void Console::remove_order() {
 //    int position;
 //    cout << "Delete application from position:";
@@ -43,80 +118,114 @@ void Console::logout() {
 //    service.delete_application(position - 1);
 //    cout << "Application deleted\n";
 //}
-//
-//void Console::update_order() {
-//    int position;
-//    cout << "Update application from position:";
-//    cin >> position;
-//    char name_string[50];
-//    int memory_kb, status;
-//    cout << "Name: ";
-//    cin >> name_string;
-//    char *name = name_string;
-//    cout << "Memory (in KB): ";
-//    cin >> memory_kb;
-//    cout << "Status (1=RAM or 2=swap): ";
-//    cin >> status;
-//    service.update_application(position - 1, name, memory_kb, status);
-//    cout << "Application updated\n";
-//}
 
-void Console::show_foods() {
-    vector<Food> foods = service.get_all_foods();
+void Console::show_foods(vector<Food> foods) {
     for (int i = 0; i < foods.size(); i++)
-        cout << i + 1 << ". " << foods[i] << endl;
+        cout << endl << i + 1 << ". " << foods[i];
 }
 
-void Console::show_shopping() {
-    vector<Shopping> shopping = service.get_all_shopping();
+void Console::show_shopping(vector<Shopping> shopping) {
     for (int i = 0; i < shopping.size(); i++)
-        cout << i + 1 << ". " << shopping[i] << endl;
+        cout << endl << i + 1 << ". " << shopping[i];
 }
 
-void Console::show_all() {
-    vector<Food> foods = service.get_all_foods();
-    vector<Shopping> shopping = service.get_all_shopping();
+void Console::show_orders(const vector<Food> &foods, const vector<Shopping> &shopping) {
     int i = 0;
     for (const auto &food:foods)
-        cout << ++i << ". " << food << endl;
+        cout << endl << ++i << ". " << food;
     for (const auto &sh:shopping)
-        cout << ++i << ". " << sh << endl;
+        cout << endl << ++i << ". " << sh;
+}
+
+void Console::show_orders_by_client() {
+    string client_name;
+    cout << "Client: ";
+    cin >> client_name;
+    vector<Food> foods;
+    vector<Shopping> shopping;
+    service.orders_by_client(client_name, foods, shopping);
+    show_orders(foods, shopping);
+}
+
+void Console::menu() {
+    bool work = true;
+    while (work) {
+        cout << "\n\n"
+             << "1. Adaugare comanda\n"
+             //             << "2. Stergere comanda\n"
+             << "2. Cautare dupa client\n"
+             << "3. Afisati toate comenzile\n"
+             << "4. Afisati comenzile de tip mancare\n"
+             << "5. Afisati comenzile de tip shopping\n"
+             << "6. Log-out\n"
+             << "Optiunea: ";
+        int option;
+        cin >> option;
+        switch (option) {
+            case 1: {
+                add_order();
+                break;
+            }
+            case 2: {
+                show_orders_by_client();
+                break;
+            }
+            case 3: {
+                vector<Food> foods = service.get_all_foods();
+                vector<Shopping> shopping = service.get_all_shopping();
+                show_orders(foods, shopping);
+                break;
+            }
+            case 4: {
+                vector<Food> foods = service.get_all_foods();
+                show_foods(foods);
+                break;
+            }
+            case 5: {
+                vector<Shopping> shopping = service.get_all_shopping();
+                show_shopping(shopping);
+                break;
+            }
+            case 6: {
+                logout();
+                work = false;
+                break;
+            }
+            default: cout << "\nOptiune inexistenta! Reincercati!";
+        }
+    }
 }
 
 void Console::run_console() {
     bool work = true;
-    int rez = login();
-    if (rez != -1) {
-        while (work) {
-            cout << "\n\n"
-                 //                 << "1. Adaugare comanda\n"
-                 //                 << "2. Stergere comanda\n"
-                 //                 << "3. Actualizeaza comanda\n"
-                 << "1. Afisati toate comenzile\n"
-                 << "2. Afisati comenzile de tip mancare\n"
-                 << "3. Afisati comenzile de tip shopping\n"
-                 << "4. Iesire\n"
-                 << "\nOptiune: ";
-            int option;
-            cin >> option;
-            switch (option) {
-                case 1: {
-                    show_all();
+    while (work) {
+        cout << "\n"
+             << "1. Log-in\n"
+             << "2. Creare cont\n"
+             << "3. Iesire\n"
+             << "Optiunea: ";
+        int option;
+        cin >> option;
+        switch (option) {
+            case 1: {
+                if (login()) {
+                    cout << "Logare reusita";
+                    menu();
+                } else {
+                    cout << "Utilizator sau parola gresita! Reincercati!\n";
                     break;
                 }
-                case 2: {
-                    show_foods();
-                    break;
-                }
-                case 3: {
-                    show_shopping();
-                    break;
-                }
-                case 4: {
-                    logout();
-                    work = false;
-                }
+                break;
             }
+            case 2: {
+                add_user();
+                break;
+            }
+            case 3: {
+                work = false;
+                break;
+            }
+            default: cout << "\nOptiune inexistenta! Reincercati!";
         }
-    } else cout << "Autentificare esuata..." << endl;
+    }
 }

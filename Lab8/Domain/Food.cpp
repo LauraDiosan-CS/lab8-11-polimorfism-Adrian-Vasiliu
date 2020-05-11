@@ -39,13 +39,14 @@ ostream &operator<<(ostream &os, Food food) {
     for (const auto &preparation:food.get_string_list())
         preparations += preparation + ',';
     os << "Nume client: " << food.get_client_name() << "; adresa: " << food.get_client_address() << ", preparate: "
-       << preparations << " pret:" << food.get_price();
+       << preparations << " pret: " << food.get_price();
     return os;
 }
 
 string Food::string_delimiter(char delimiter) {
     string preparations;
-    for (const auto &preparation:string_list)
-        preparations += preparation + '-';
+    for (int i = 0; i < string_list.size() - 1; i++)
+        preparations += string_list[i] + '-';
+    preparations += string_list.back();
     return client_name + delimiter + client_address + delimiter + preparations + delimiter + to_string(price);
 }
