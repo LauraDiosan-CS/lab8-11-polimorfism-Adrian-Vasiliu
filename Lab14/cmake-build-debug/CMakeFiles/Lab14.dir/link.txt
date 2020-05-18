@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Lab14.dir/main.cpp.o CMakeFiles/Lab14.dir/Domain/Plane.cpp.o CMakeFiles/Lab14.dir/Domain/Table.cpp.o  -o Lab14 

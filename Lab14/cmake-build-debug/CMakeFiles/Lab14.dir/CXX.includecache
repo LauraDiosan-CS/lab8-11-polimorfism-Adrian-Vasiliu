@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/adi/CLionProjects/Lab14/Domain/Plane.h
+
+/home/adi/CLionProjects/Lab14/Repository/TemplateRepository.h
+vector
+-
+algorithm
+-
+
+/home/adi/CLionProjects/Lab14/main.cpp
+Domain/Plane.h
+/home/adi/CLionProjects/Lab14/Domain/Plane.h
+Repository/TemplateRepository.h
+/home/adi/CLionProjects/Lab14/Repository/TemplateRepository.h
+iostream
+-
+
