@@ -33,7 +33,6 @@ CMakeFiles/Lab8.dir/Service/Service.cpp.o
 CMakeFiles/Lab8.dir/Tests/Tester.cpp.o
  /home/adi/CLionProjects/Lab8/Domain/Food.h
  /home/adi/CLionProjects/Lab8/Domain/Order.h
- /home/adi/CLionProjects/Lab8/Domain/OrderValidator.h
  /home/adi/CLionProjects/Lab8/Domain/Shopping.h
  /home/adi/CLionProjects/Lab8/Domain/User.h
  /home/adi/CLionProjects/Lab8/Repository/TemplateRepository.h
@@ -44,7 +43,6 @@ CMakeFiles/Lab8.dir/Tests/Tester.cpp.o
 CMakeFiles/Lab8.dir/UI/Console.cpp.o
  /home/adi/CLionProjects/Lab8/Domain/Food.h
  /home/adi/CLionProjects/Lab8/Domain/Order.h
- /home/adi/CLionProjects/Lab8/Domain/OrderValidator.h
  /home/adi/CLionProjects/Lab8/Domain/Shopping.h
  /home/adi/CLionProjects/Lab8/Domain/User.h
  /home/adi/CLionProjects/Lab8/Repository/TemplateRepository.h
@@ -55,7 +53,6 @@ CMakeFiles/Lab8.dir/UI/Console.cpp.o
 CMakeFiles/Lab8.dir/app.cpp.o
  /home/adi/CLionProjects/Lab8/Domain/Food.h
  /home/adi/CLionProjects/Lab8/Domain/Order.h
- /home/adi/CLionProjects/Lab8/Domain/OrderValidator.h
  /home/adi/CLionProjects/Lab8/Domain/Shopping.h
  /home/adi/CLionProjects/Lab8/Domain/User.h
  /home/adi/CLionProjects/Lab8/Repository/TemplateFileRepo.h

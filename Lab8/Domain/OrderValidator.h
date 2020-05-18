@@ -3,8 +3,8 @@
 #include <exception>
 using namespace std;
 
-class OrderValidator
-{protected:
+class OrderValidator {
+ protected:
     int no_errors;
     string message;
  public:

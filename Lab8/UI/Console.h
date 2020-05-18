@@ -10,9 +10,9 @@ class Console {
     bool login();
     void logout();
     void add_user();
-    void add_order();
     void add_food();
     void add_shopping();
+    void add_order();
 //    void remove_order();
     static void show_foods(vector<Food>);
     static void show_shopping(vector<Shopping> shopping);

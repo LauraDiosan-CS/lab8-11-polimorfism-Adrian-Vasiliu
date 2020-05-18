@@ -11,7 +11,6 @@ class ValidationException : public exception {
         message = new char[strlen(m) + 1];
         strcpy(message, m);
     }
-
     ~ValidationException() { if (message) delete[] message; }
     virtual const char *get_message() const throw() { return message; }
 };

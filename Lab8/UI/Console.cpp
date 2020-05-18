@@ -36,6 +36,60 @@ void Console::add_user() {
     cout << "Cont creat\n";
 }
 
+void Console::add_food() {
+    string client_name, client_address, s;
+    vector<string> preparations_list;
+    int n, price;
+    cout << "\nNume client: ";
+    cin >> client_name;
+    cout << "Adresa client(fara spatii): ";
+    cin >> client_address;
+    cout << "Numarul de preparate: ";
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        cout << "Preparat " << i + 1 << ": ";
+        cin >> s;
+        preparations_list.push_back(s);
+    }
+    cout << "Pret total: ";
+    cin >> price;
+    try {
+        service.add_food(client_name, client_address, preparations_list, price);
+        cout << "Comanda adaugata";
+    }
+    catch (ValidationException &exception) {
+        cout << exception.get_message() << "\nReincercati!";
+    }
+}
+
+void Console::add_shopping() {
+    string client_name, client_address, s, shop_name;
+    vector<string> shopping_list;
+    int n, price;
+    cout << "\nNume client: ";
+    cin >> client_name;
+    cout << "Adresa client(fara spatii): ";
+    cin >> client_address;
+    cout << "Numarul de cumparaturi: ";
+    cin >> n;
+    for (int i = 0; i < n; i++) {
+        cout << "Obiect " << i + 1 << ": ";
+        cin >> s;
+        shopping_list.push_back(s);
+    }
+    cout << "Pret total: ";
+    cin >> price;
+    cout << "Nume magazin: ";
+    cin >> shop_name;
+    try {
+        service.add_shopping(client_name, client_address, shopping_list, price, shop_name);
+        cout << "Comanda adaugata";
+    }
+    catch (ValidationException &exception) {
+        cout << exception.get_message() << "\nReincercati!";
+    }
+}
+
 void Console::add_order() {
     cout << endl
          << "Tipul comenzii:\n"
@@ -54,70 +108,6 @@ void Console::add_order() {
             break;
         }
         default: cout << "\nOptiune inexistenta! Reincercati!";
-    }
-}
-
-void Console::add_food() {
-    string client_name, client_address, s;
-    vector<string> preparations_list;
-    int n, price;
-    cout << "\nNume client: ";
-    cin >> client_name;
-    cout << "Adresa client(fara spatii): ";
-    cin >> client_address;
-    cout << "Numarul de preparate: ";
-    cin >> n;
-    while (n == 0) {
-        cout << "Lista trebuie sa contina minim un element!\n"
-             << "Numarul de preparate: ";
-        cin >> n;
-    }
-    for (int i = 0; i < n; i++) {
-        cout << "Preparat " << i + 1 << ": ";
-        cin >> s;
-        preparations_list.push_back(s);
-    }
-    cout << "Pret total: ";
-    cin >> price;
-    try {
-        service.add_food(client_name, client_address, preparations_list, price);
-        cout << "Comanda adaugata";
-    }
-    catch (ValidationException &exception) {
-        cout << exception.get_message();
-    }
-}
-
-void Console::add_shopping() {
-    string client_name, client_address, s, shop_name;
-    vector<string> shopping_list;
-    int n, price;
-    cout << "\nNume client: ";
-    cin >> client_name;
-    cout << "Adresa client(fara spatii): ";
-    cin >> client_address;
-    cout << "Numarul de cumparaturi: ";
-    cin >> n;
-    while (n == 0) {
-        cout << "Lista trebuie sa contina minim un element!\n"
-             << "Numarul de preparate: ";
-        cin >> n;
-    }
-    for (int i = 0; i < n; i++) {
-        cout << "Obiect " << i + 1 << ": ";
-        cin >> s;
-        shopping_list.push_back(s);
-    }
-    cout << "Pret total: ";
-    cin >> price;
-    cout << "Nume magazin: ";
-    cin >> shop_name;
-    try {
-        service.add_shopping(client_name, client_address, shopping_list, price, shop_name);
-        cout << "Comanda adaugata";
-    }
-    catch (ValidationException &exception) {
-        cout << exception.get_message();
     }
 }
 

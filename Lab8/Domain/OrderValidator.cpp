@@ -1,5 +1,4 @@
 #include "OrderValidator.h"
-#include <cstring>
 using namespace std;
 
 OrderValidator::OrderValidator() {
@@ -9,11 +8,14 @@ OrderValidator::OrderValidator() {
 OrderValidator::~OrderValidator() = default;
 
 int OrderValidator::validate(Order order) {
-    message = "";
     no_errors = 0;
+    if (order.get_string_list().empty()) {
+        no_errors++;
+        message += "\nLista trebuie sa contina minim un element!";
+    }
     if (order.get_price() <= 0) {
         no_errors++;
-        message += "Pretul trebuie sa fie mai mare decat 0!";
+        message += "\nPretul trebuie sa fie mai mare decat 0!";
     }
     return no_errors;
 }

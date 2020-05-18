@@ -1,5 +1,6 @@
 #include "Service.h"
 #include "../Repository/TemplateFileRepo.h"
+#include "../Domain/OrderValidator.h"
 #include "../ValidationException.h"
 
 Service::Service() {
@@ -39,6 +40,7 @@ void Service::add_user(const string &user_name, const string &password) {
 void Service::add_food(const string &client_name, const string &client_address, const vector<string> &preparations_list,
                        int price) {
     Food food(client_name, client_address, preparations_list, price);
+    OrderValidator order_validator;
     if (order_validator.validate(food) == 0) {
         food_repo->add(food);
         ((TemplateFileRepo<Food> *) food_repo)->write_file();
@@ -48,6 +50,7 @@ void Service::add_food(const string &client_name, const string &client_address, 
 void Service::add_shopping(const string &client_name, const string &client_address,
                            const vector<string> &preparations_list, int price, const string &shop_name) {
     Shopping shopping(client_name, client_address, preparations_list, price, shop_name);
+    OrderValidator order_validator;
     if (order_validator.validate(shopping) == 0) {
         shopping_repo->add(shopping);
         ((TemplateFileRepo<Shopping> *) shopping_repo)->write_file();

@@ -51,12 +51,17 @@ template<class T>
 int TemplateRepository<T>::remove(const T &item) {
 //    int position = get_position(item);
 //    items.erase(position);
-    auto last = std::remove(items.begin(), items.end(), item);
-    if (last != items.end()) {
-        items.erase(last, items.end());
-        return 0;
-    }
-    return -1;
+    for (int i = 0; i < items.size(); i++)
+        if (items[i] == item) {
+            items[i] = items.back();
+            items.pop_back();
+        }
+    return 0;
+//    for (auto object:items)
+//        if (object == item) {
+//            object = items.back();
+//            items.pop_back();
+//        }
 }
 
 template<class T>

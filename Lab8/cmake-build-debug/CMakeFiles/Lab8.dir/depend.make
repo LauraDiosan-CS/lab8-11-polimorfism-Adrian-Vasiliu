@@ -32,7 +32,6 @@ CMakeFiles/Lab8.dir/Service/Service.cpp.o: ../ValidationException.h
 
 CMakeFiles/Lab8.dir/Tests/Tester.cpp.o: ../Domain/Food.h
 CMakeFiles/Lab8.dir/Tests/Tester.cpp.o: ../Domain/Order.h
-CMakeFiles/Lab8.dir/Tests/Tester.cpp.o: ../Domain/OrderValidator.h
 CMakeFiles/Lab8.dir/Tests/Tester.cpp.o: ../Domain/Shopping.h
 CMakeFiles/Lab8.dir/Tests/Tester.cpp.o: ../Domain/User.h
 CMakeFiles/Lab8.dir/Tests/Tester.cpp.o: ../Repository/TemplateRepository.h
@@ -43,7 +42,6 @@ CMakeFiles/Lab8.dir/Tests/Tester.cpp.o: ../UI/Console.h
 
 CMakeFiles/Lab8.dir/UI/Console.cpp.o: ../Domain/Food.h
 CMakeFiles/Lab8.dir/UI/Console.cpp.o: ../Domain/Order.h
-CMakeFiles/Lab8.dir/UI/Console.cpp.o: ../Domain/OrderValidator.h
 CMakeFiles/Lab8.dir/UI/Console.cpp.o: ../Domain/Shopping.h
 CMakeFiles/Lab8.dir/UI/Console.cpp.o: ../Domain/User.h
 CMakeFiles/Lab8.dir/UI/Console.cpp.o: ../Repository/TemplateRepository.h
@@ -54,7 +52,6 @@ CMakeFiles/Lab8.dir/UI/Console.cpp.o: ../ValidationException.h
 
 CMakeFiles/Lab8.dir/app.cpp.o: ../Domain/Food.h
 CMakeFiles/Lab8.dir/app.cpp.o: ../Domain/Order.h
-CMakeFiles/Lab8.dir/app.cpp.o: ../Domain/OrderValidator.h
 CMakeFiles/Lab8.dir/app.cpp.o: ../Domain/Shopping.h
 CMakeFiles/Lab8.dir/app.cpp.o: ../Domain/User.h
 CMakeFiles/Lab8.dir/app.cpp.o: ../Repository/TemplateFileRepo.h
